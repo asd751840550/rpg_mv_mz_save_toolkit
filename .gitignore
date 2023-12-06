@@ -1,0 +1,11 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/.vs
+/rpg_mv_mz_save_toolkit/bin
+/rpg_mv_mz_save_toolkit/obj
+/rpg_save_toolkit.UI/bin
+/rpg_save_toolkit.UI/obj
+/rpg_save_toolkit.Util/bin/Debug/net6.0
+/rpg_save_toolkit.Util/obj
