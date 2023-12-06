@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="rpg_mv_mz_save_toolkit.Pages.HomePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:rpg_mv_mz_save_toolkit.Pages"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:kui="http://kihaw.com/RPGSaveToolkit/UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <!--<UserControl.Resources>
+        <kui:HomePageViewModel x:Key="InstanceVM"/>
+    </UserControl.Resources>
+    <UserControl.DataContext>
+        <Binding Source="{StaticResource InstanceVM}"/>
+    </UserControl.DataContext>-->
+
+    <Grid Background="{DynamicResource KBackgroundColor}">
+        <Grid Margin="50" Background="Transparent" AllowDrop="True">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Drop">
+                    <i:CallMethodAction TargetObject="{Binding}" MethodName="MainGrid_Drop"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Image Width="200" Height="200" Source="pack://application:,,,/rpg_mv_mz_save_toolkit;component/res/RPGMZ.png"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+                <TextBlock Text="Drop .rpgsave or .rmmzsave file here" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Button Content="Select File">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:CallMethodAction TargetObject="{Binding}" MethodName="BtnSelectFile_Clicked"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
+            </StackPanel>
+
+            <Grid.Triggers>
+                <EventTrigger RoutedEvent="DragEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Duration="0:0:0.01" Storyboard.TargetProperty="Fill.Color" Storyboard.TargetName="rectBackground" From="Transparent" To="#405AABFA"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="DragLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Duration="0:0:0.01" Storyboard.TargetProperty="Fill.Color" Storyboard.TargetName="rectBackground" From="#405AABFA" To="Transparent"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Drop">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Duration="0:0:0.01" Storyboard.TargetProperty="Fill.Color" Storyboard.TargetName="rectBackground" From="#405AABFA" To="Transparent"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Grid.Triggers>
+        </Grid>
+        <Rectangle x:Name="rectBackground" AllowDrop="True" StrokeDashArray="3 2" Stroke="{DynamicResource KForegroundColor}" StrokeThickness="2" Margin="50" Fill="Transparent" IsHitTestVisible="False"/>
+    </Grid>
+
+</UserControl>
