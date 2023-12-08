@@ -31,8 +31,6 @@ namespace rpg_save_toolkit.UI.ViewModels
 
         [ObservableProperty]
         private string _windowTitle = "RPG Save Editor";
-        //[ObservableProperty]
-        //private string _pageTitle = "Home";
         [ObservableProperty]
         private WindowState _windowState = WindowState.Maximized;
         [ObservableProperty]

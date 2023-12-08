@@ -28,9 +28,14 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Image Width="200" Height="200" Source="pack://application:,,,/rpg_mv_mz_save_toolkit;component/res/RPGMZ.png"/>
-            </StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Width="200" Height="200" Source="pack://application:,,,/rpg_mv_mz_save_toolkit;component/res/RPGMV.png"/>
+                <Image Grid.Column="1" Width="200" Height="200" Source="pack://application:,,,/rpg_mv_mz_save_toolkit;component/res/RPGMZ.png"/>
+            </Grid>
 
             <StackPanel Grid.Row="1" HorizontalAlignment="Center">
                 <TextBlock Text="Drop .rpgsave or .rmmzsave file here" VerticalAlignment="Center" HorizontalAlignment="Center"/>

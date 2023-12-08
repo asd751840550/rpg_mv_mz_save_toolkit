@@ -10,6 +10,8 @@ namespace rpg_save_toolkit.UI.ViewModels
     public partial class BasePageViewModel : ObservableObject
     {
         [ObservableProperty]
+        public Uri? _icon;
+        [ObservableProperty]
         public object? _content;
         [ObservableProperty]
         public string? _title;

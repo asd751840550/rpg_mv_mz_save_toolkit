@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Formats.Asn1;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,7 @@ namespace rpg_save_toolkit.UI.ViewModels
         public EditPageViewModel()
         {
             Title = "Not load file";
+            Icon = null;
         }
 
         [ObservableProperty]
@@ -64,15 +66,18 @@ namespace rpg_save_toolkit.UI.ViewModels
             _rpgAssist = null;
             JToken? jsrc = null;
             string? tmpTitle = Title;
+            Uri? iconPath = Icon;
             if (filePath.EndsWith(".rpgsave"))
             {
                 _rpgAssist = new RpgMV();
                 tmpTitle = "Rpg MV";
+                iconPath = new Uri("pack://application:,,,/rpg_mv_mz_save_toolkit;component/res/RPGMV.png");
             }
             else if (filePath.EndsWith(".rmmzsave"))
             {
                 _rpgAssist = new RpgMZ();
                 tmpTitle = "Rpg MZ";
+                iconPath = new Uri("pack://application:,,,/rpg_mv_mz_save_toolkit;component/res/RPGMZ.png");
             }
             if(_rpgAssist != null)
             {
@@ -80,6 +85,7 @@ namespace rpg_save_toolkit.UI.ViewModels
                 if(jsrc != null)
                 {
                     Title = tmpTitle;
+                    Icon = iconPath;
                     JObjectTrees.Clear();
                     JObjectTrees.Add(new JsonObjectTreeTitleViewModel(jsrc));
                 }

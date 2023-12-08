@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="res\Home.gif" />
+    <None Remove="res\RPGMV.png" />
     <None Remove="res\RPGMZ.png" />
   </ItemGroup>
 
@@ -33,7 +35,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="res\RPGMZ.png" />
+    <Resource Include="res\Home.gif" />
+    <Resource Include="res\RPGMV.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\RPGMZ.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

@@ -36,7 +36,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
         <DockPanel Grid.Row="0" Background="{DynamicResource KBgTitleColor}">
-            <Image Margin="16 0 0 0" Width="26" Height="26"/>
+            <Image Margin="16 0 0 0" Width="26" Height="26" Source="{Binding SelectedItem.Icon}"/>
             <TextBlock Margin="8 0 0 0" Text="{Binding WindowTitle}"  FontWeight="Bold" FontSize="18" VerticalAlignment="Center"/>
             <TextBlock Margin="8 0 0 8" Text="{Binding SelectedItem.Title}" FontWeight="Bold" FontSize="13" VerticalAlignment="Bottom"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">

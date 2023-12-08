@@ -20,6 +20,7 @@ namespace rpg_save_toolkit.UI.ViewModels
         public HomePageViewModel()
         {
             Title = "Home";
+            Icon = new Uri("pack://application:,,,/rpg_mv_mz_save_toolkit;component/res/Home.gif");
         }
         public async void MainGrid_Drop(object sender, DragEventArgs e)
         {
